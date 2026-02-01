@@ -1,0 +1,40 @@
+{
+  "name": "n8n-nodes-frappe-lms",
+  "version": "0.1.0",
+  "description": "Custom n8n node for Frappe LMS. Automate student registration, course enrollments, and batch announcements directly from workflows.",
+  "keywords": [
+    "n8n-community-node-package",
+    "frappe",
+    "lms"
+  ],
+  "author": "Piyush Sachdeva <sachdevapiyush91@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/piyushcreates/n8n-nodes-frappe-lms.git"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "nodes": [
+      "dist/nodes/FrappeLms/FrappeLms.node.js"
+    ],
+    "credentials": [
+      "dist/credentials/FrappeLmsApi.credentials.js"
+    ]
+  },
+  "scripts": {
+    "build": "tsc && npm run copy-icons",
+    "copy-icons": "cp nodes/FrappeLms/frappeLms.png dist/nodes/FrappeLms/",
+    "dev": "tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/node": "^25.1.0",
+    "@types/request": "^2.48.13",
+    "n8n-workflow": "^2.6.0",
+    "typescript": "^5.9.3"
+  }
+}
